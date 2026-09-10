@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Dama Quest: Island Pals</title>
+  <style>
+    :root {
+      --primary-color: #2b5b84;
+      --text-color: #2d3748;
+      --bg-color: #f7fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --accent-color: #319795;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .last-updated {
+      font-size: 0.95rem;
+      color: #718096;
+      font-weight: 500;
+    }
+
+    h2, h3 {
+      color: var(--primary-color);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: var(--border-color);
+      margin: 2rem 0;
+    }
+
+    code {
+      background-color: #edf2f7;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.9em;
+      color: #805ad5;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Privacy Policy for Dama Quest: Island Pals</h1>
+      <p class="last-updated"><strong>Last updated:</strong> September 10, 2026</p>
+    </header>
+
+    <main>
+      <p><strong>"Dama Quest: Island Pals"</strong> (Package: <code>org.glila.damakids</code>) ("the Game") is developed by <strong>Bousselham</strong> ("we", "us", or "our"). We are deeply committed to protecting the privacy of our players, especially children and families.</p>
+
+      <p>This Privacy Policy explains how our game operates, how data is stored, and our strict adherence to child safety standards.</p>
+
+      <hr>
+
+      <h3>1. Information Collection and Use</h3>
+      <ul>
+        <li><strong>Zero Personal Data Collection</strong>: We do NOT collect, transmit, store, sell, or share any personally identifiable information (PII) such as real names, email addresses, phone numbers, precise or approximate physical locations, device identifiers (IMEI/Android ID), IP addresses, or biometric data.</li>
+        <li><strong>Local On-Device Storage Only</strong>: All player data (including chosen explorer nickname, avatar selection, coin balance, unlocked game skins, audio volume preferences, and career match statistics) is stored exclusively on the user's local device using standard local storage (<code>SharedPreferences</code>). This data never leaves the player's device and is never transmitted to external servers, cloud databases, or third parties.</li>
+      </ul>
+
+      <hr>
+
+      <h3>2. Children’s Privacy (COPPA &amp; Google Play Families Compliance)</h3>
+      <p>"Dama Quest: Island Pals" is designed for children and families of all ages, strictly complying with:</p>
+      <ul>
+        <li>The <strong>Children’s Online Privacy Protection Act (COPPA)</strong></li>
+        <li>The <strong>Google Play Families Policy &amp; Designed for Families Requirements</strong></li>
+        <li>The <strong>General Data Protection Regulation (GDPR) for Children</strong></li>
+      </ul>
+
+      <p>Key protections include:</p>
+      <ul>
+        <li><strong>No Under-13 Data Collection</strong>: We do not collect or request any personal information from children under the age of 13.</li>
+        <li><strong>100% Offline-First Gameplay</strong>: The game requires no internet connectivity to enjoy all features, including matches against the Robo-Pebble AI, Pass &amp; Play two-player mode, and the Treasure Shop.</li>
+        <li><strong>Zero Ads &amp; Zero In-App Purchases</strong>: The game does not contain third-party banner ads, interstitial ads, rewarded video ads, behavioral trackers, or real-money in-app purchases.</li>
+      </ul>
+
+      <hr>
+
+      <h3>3. Device Permissions &amp; Local Notifications</h3>
+      <ul>
+        <li><strong>Local Inactivity Reminders</strong>: The game schedules local notifications on the user's device to remind them of friendly matches. These notifications are scheduled and delivered entirely on-device by the operating system (<code>flutter_local_notifications</code>). No background tracking, network telemetry, or server communication is involved.</li>
+        <li><strong>Notification Controls</strong>: Notifications can be easily disabled at any time through standard Android system notification settings.</li>
+        <li><strong>Haptic Feedback &amp; Audio</strong>: The game uses standard vibration (<code>VIBRATE</code> permission) and local audio playback (<code>audioplayers</code>) for tactile and auditory feedback during gameplay. No microphone or audio recording permissions are requested or used.</li>
+      </ul>
+
+      <hr>
+
+      <h3>4. Third-Party Services &amp; SDKs</h3>
+      <p>The Game does <strong>not</strong> include:</p>
+      <ul>
+        <li>Third-party analytics SDKs (e.g., Firebase Analytics, Google Analytics, Adjust, AppsFlyer)</li>
+        <li>Third-party advertising networks (e.g., AdMob, Unity Ads, AppLovin)</li>
+        <li>Social media plugins or external account logins (e.g., Facebook, Google Sign-In)</li>
+      </ul>
+
+      <hr>
+
+      <h3>5. Data Retention and Deletion</h3>
+      <p>Since all game data is stored exclusively on your local device:</p>
+      <ul>
+        <li><strong>Parental Reset</strong>: Parents or players can reset all game data (coins, nickname, stats, and unlocked items) at any time inside the <strong>Settings</strong> menu using the Parental Math Gate.</li>
+        <li><strong>App Uninstall</strong>: Uninstalling the Game immediately and permanently removes all stored data from your device.</li>
+      </ul>
+
+      <hr>
+
+      <h3>6. Changes to This Privacy Policy</h3>
+      <p>We may periodically update this Privacy Policy to reflect app enhancements or regulatory updates. Any changes will be posted with an updated "Last updated" date.</p>
+
+      <hr>
+
+      <h3>7. Contact Us</h3>
+      <p>If you, your child, or a parent/guardian have any questions, suggestions, or concerns regarding this Privacy Policy or our practices, please contact us at:</p>
+      <ul>
+        <li><strong>Developer / Organization</strong>: Bousselham</li>
+        <li><strong>Package Name</strong>: org.glila.damakids</li>
+        <li><strong>Support Email</strong>: <a href="mailto:glilabousselham01@gmail.com">glilabousselham01@gmail.com</a></li>
+      </ul>
+    </main>
+  </div>
+</body>
+</html>
