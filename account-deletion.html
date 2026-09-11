@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Deletion Request - [App Name]</title>
+  <style>
+    :root {
+      --primary: #1e293b;
+      --primary-accent: #2563eb;
+      --primary-accent-hover: #1d4ed8;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --danger-border: #fecaca;
+      --warning-bg: #fffbeb;
+      --warning-border: #fef3c7;
+      --warning-text: #92400e;
+      --success-bg: #f0fdf4;
+      --success-border: #bbf7d0;
+      --success-text: #166534;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #334155;
+      --text-muted: #64748b;
+      --heading: #0f172a;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 2.5rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .header-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary-accent);
+      background-color: #eff6ff;
+      border: 1px solid #dbeafe;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .meta {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta strong {
+      color: var(--heading);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-top: 2rem;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* Steps List */
+    .steps-list {
+      list-style: none;
+      counter-reset: step-counter;
+      margin: 1.25rem 0;
+    }
+
+    .steps-list li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 2.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.85rem;
+      height: 1.85rem;
+      background-color: var(--primary-accent);
+      color: #ffffff;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .code-box {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #0f172a;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.9rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      word-break: break-all;
+    }
+
+    /* Alerts */
+    .alert {
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 0.95rem;
+    }
+
+    .alert-warning {
+      background-color: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      color: var(--warning-text);
+    }
+
+    .alert-danger {
+      background-color: var(--danger-bg);
+      border: 1px solid var(--danger-border);
+      color: var(--danger);
+    }
+
+    /* Button */
+    .btn-container {
+      margin: 1.5rem 0;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--danger);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+    }
+
+    .btn-action:hover {
+      background-color: #b91c1c;
+      transform: translateY(-1px);
+    }
+
+    .btn-action:active {
+      transform: translateY(0);
+    }
+
+    /* Data breakdown grid */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .data-column {
+      border-radius: 8px;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+    }
+
+    .data-column.delete-col {
+      background-color: var(--danger-bg);
+      border-color: var(--danger-border);
+    }
+
+    .data-column.retain-col {
+      background-color: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    .data-column h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .delete-col h3 {
+      color: var(--danger);
+    }
+
+    .retain-col h3 {
+      color: #475569;
+    }
+
+    .data-list {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      font-size: 0.92rem;
+    }
+
+    .data-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 1.5rem;
+    }
+
+    footer a {
+      color: var(--primary-accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .data-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-action {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <div class="card">
+      <header>
+        <span class="header-badge">Google Play Compliance &bull; Data Safety</span>
+        <h1>Account &amp; Data Deletion Request</h1>
+        <div class="meta">
+          <strong>Application:</strong> [Insert App Name Here]<br>
+          <strong>Developer:</strong> Bousselham
+        </div>
+      </header>
+
+      <!-- Purpose Section -->
+      <section>
+        <p>
+          We value your privacy and believe you should always maintain full control over your personal information. In accordance with Google Play's Account Deletion Policy, users can request the permanent deletion of their account and all associated personal data from our systems using the instructions below.
+        </p>
+      </section>
+
+      <hr style="border: 0; height: 1px; background: var(--border); margin: 1.5rem 0;">
+
+      <!-- Step-by-Step Instructions -->
+      <section>
+        <h2>How to Request Account Deletion</h2>
+        <p>To ensure user privacy and prevent unauthorized requests, please follow these steps:</p>
+
+        <ol class="steps-list">
+          <li>
+            <strong>Identity Verification:</strong>
+            <p>You must send your request from the <strong>same email address</strong> associated with your registered account. Requests received from unrecognized email addresses cannot be processed.</p>
+          </li>
+          <li>
+            <strong>Recipient Address:</strong>
+            <p>Send the email directly to our support team at: <br><span class="code-box">glilabousselham01@gmail.com</span></p>
+          </li>
+          <li>
+            <strong>Email Subject Line:</strong>
+            <p>Set the subject line exactly to: <br><span class="code-box">Account Deletion Request - [Insert Username or Registered Email]</span></p>
+          </li>
+          <li>
+            <strong>Confirmation &amp; Submission:</strong>
+            <p>Click the button below to automatically generate and pre-fill the deletion request in your default email client:</p>
+            <div class="btn-container">
+              <a href="mailto:glilabousselham01@gmail.com?subject=Account%20Deletion%20Request%20-%20%5BInsert%20Username%20or%20Registered%20Email%5D&body=Hello%20Support%20Team%2C%0A%0AI%20am%20requesting%20the%20permanent%20deletion%20of%20my%20account%20and%20all%20associated%20personal%20data.%0A%0AAccount%20Details%3A%0A-%20Registered%20Email%3A%20%0A-%20Username%2FHandle%3A%20%0A%0AI%20confirm%20that%20I%20am%20sending%20this%20request%20from%20the%20email%20address%20registered%20with%20my%20account.%0A%0AThank%20you." class="btn-action">
+                ✉ Request Account Deletion via Email
+              </a>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <hr style="border: 0; height: 1px; background: var(--border); margin: 1.5rem 0;">
+
+      <!-- Data Retention & Policy Details -->
+      <section>
+        <h2>Data Retention &amp; Deletion Breakdown</h2>
+        <p>Once your deletion request is verified and processed, here is how your data will be handled:</p>
+
+        <div class="data-grid">
+          <div class="data-column delete-col">
+            <h3>&#10005; What Gets Permanently Deleted</h3>
+            <ul class="data-list">
+              <li>User profile details and identifiers</li>
+              <li>Authentication credentials and login tokens</li>
+              <li>Workout sessions and timer history logs</li>
+              <li>User-generated social posts &amp; comments</li>
+              <li>Media uploads (photos, videos, attachments)</li>
+              <li>Followers, following, and social history</li>
+            </ul>
+          </div>
+
+          <div class="data-column retain-col">
+            <h3>&#128274; What May Be Retained</h3>
+            <ul class="data-list">
+              <li>Fully aggregated and anonymized telemetry/analytics (cannot be tied back to you)</li>
+              <li>Financial transactions, invoices, or billing records strictly required for legal, tax, or regulatory compliance</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Processing Timeline & Irreversibility -->
+      <section>
+        <h2>Processing Timeline</h2>
+        <div class="alert alert-warning">
+          <strong>Processing Window:</strong> Requests are verified and completed within <strong>14 to 30 days</strong> from the receipt of your email.
+        </div>
+        <div class="alert alert-danger">
+          <strong>Irreversible Action:</strong> Once deletion is complete, the process is permanent and cannot be reversed. Account recovery, restoring purchase progress, and retrieving saved logs or media will no longer be possible.
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Bousselham. All rights reserved.</p>
+      <p>This page is publicly accessible and does not require user authentication.</p>
+    </footer>
+  </main>
+
+</body>
+</html>
